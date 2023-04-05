@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/bootstrap.css" class="">
+    <script src="js/bootstrap.js"></script> 
+    <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+    
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    </script>
+
+    <script src="https://kit.fontawesome.com/0c07a71a4e.js" crossorigin="anonymous"></script>
+
+    <script>
+
+      function validate()
+      {
+        var name=document.getElementById("participant name");
+        var cname=document.getElementById("college name");
+        var branch=document.getElementById("branch");
+        var city=document.getElementById("city");
+        var email=document.getElementById("email");
+        var trans=document.getElementById("trans");
+
+        if(name.value.trim()=="")
+        {
+			  alert("please enter the vehicle no");
+		  	return false;
+		    }
+      	else if(cname.value.trim()=="")
+	    	{
+	  		alert("please enter owner name");
+		  	return false;
+	    	}
+      	else if(city.value.trim()=="")
+	    	{
+	    	alert("select slot_booking");
+		    return false;
+	    	}
+      	else if(branch.value.trim()=="")
+	    	{
+		    alert("enter your city name")
+	    	return false;
+	    	}
+      	else if(email.value.trim()=="")
+      	{
+    		alert("please enter the email");
+    		return false;
+        }
+      	else if(trans.value.trim()=="")
+	    	{
+	  		alert("please enter the transaction/payment reference id");
+	  		return false;
+	  	  }	
+        else 
+        {
+          return true;
+        }	
+      }
+
+        function GetSelectedTextValue(ename) {
+        var selectedText = ename.options[ename.selectedIndex].innerHTML;
+        var selectedValue = ename.value;
+        alert("you have selected the event:" + selectedValue + " please conform to get the QR code" );
+      }
+      
+      function lop(tsize){
+        var val=document.getElementById("tsize").value;
+        var selectedText = tsize.options[tsize.selectedIndex].innerHTML;
+        var selectedValue = tsize.value;
+        
+
+        if(val==1){
+          var img = document.createElement("img");
+          img.src = "77.jfif";
+          img.setAttribute("style", "margin-top: 80px;");
+
+          var div = document.getElementById("x");
+          div.appendChild(img);
+        div.setAttribute("style", "text-align:center");
+        }
+        else if(val==5){
+          var img = document.createElement("img");
+          img.src = "77.jfif";
+          img.setAttribute("style", "margin-top: 80px;");
+
+          var div = document.getElementById("x");
+          div.appendChild(img);
+        div.setAttribute("style", "text-align:center");
+
+        }
+        else{
+          var img = document.createElement("img");
+          img.src = "77.jfif";
+          img.setAttribute("style", "margin-top: 80px;");
+
+          var div = document.getElementById("x");
+          div.appendChild(img);
+        div.setAttribute("style", "text-align:center");
+        }
+      }
+        
+ 
+    </script>
+    <title>Document</title>
+    <style> 
+    #kop{
+      background-image: url("final.gif");
+      background-repeat: repeat;
+    }
+    .heading{
+      color: rgb(31, 178, 197);
+        font-size: 40px;
+        font-family:Helvetica;
+        padding-top: 10px;
+
+    }
+    #pp{
+      background-color: black;
+    }
+      </style>
+</head>
+<body>
+   
+      <div  id="kop">
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+          <div class="container-fluid" >
+            <a class="navbar-brand" href="#"><div id="kop" class="badge bg-primary text-wrap" style="height:3rem;width: 10rem;">
+             <h3>Carwreck</h3>
+            </div></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" >Carwreck</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li>
+                     <center><p id="p"><i>Services</i></p></center></a></li>
+                    <li><a class="dropdown-item" href="#"><p>Book Service</p></a></li>
+                      <li><a class="dropdown-item" href="#"><p > Insurance</p></a></li>
+                      <li><a class="dropdown-item" href="#"><p >Help</p></a></li>
+                    
+                  
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+    
+    <form onsubmit="return validate()" action="connection.php" method="post">
+      <div>
+        <center>
+        <h1 class="heading"><b>Car Booking Service</b></h1>
+      <table id="pp">
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text"  width="200">Vehicle Number</span>
+            <input type="text" id="participant name"  class="form-control" name="Vehicle" placeholder="Vehicle Number" aria-label="participant name" aria-describedby="basic-addon1">
+            </div>
+          </th>
+          <th rowspan="9">
+            <div id="x" class="input-group mb-3">
+              
+              </div>
+          </th>
+        </tr>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text"  width="200">Owner Name</span>
+            <input type="text" id="college name" class="form-control" name="name" placeholder="Owner Name" aria-label="participant name" aria-describedby="basic-addon1">
+            </div>
+          </th>0
+        </tr>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text"    width="200">Slot Booking</span>
+            <input type="text" id="city" class="form-control" name="slot_booking"  placeholder=" dd/mm/yyyy" aria-label="participant name" aria-describedby="basic-addon1">
+            </div>
+          </th>
+        </tr>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text">city</span>
+            <input type="text"  id="branch" placeholder="city" name="city" class="form-control" id="branch" aria-describedby="basic-addon3">
+            </div>
+          </th>
+        </tr>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text" >email</span>
+            <input type="email" placeholder="email" class="form-control" name="email" id="email" aria-describedby="basic-addon3">
+            </div>
+          </th>
+        </tr>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text" >contact number</span>
+            <input type="text" placeholder="contact number" class="form-control" name="contact" id="contact" aria-describedby="basic-addon3">
+            </div>
+          </th>
+        </tr>
+        
+        <tr align=center>
+          <th>
+            <div> 
+              <select class="form-select" id="ename" name="garage" onchange="GetSelectedTextValue(this)" aria-label="Default select example">
+                <option value="hop">select the Garage</option>
+                <option value="Mg Motors">Mg Motors</option>
+                <option value="Maruthi Suzuki">Maruthi Suzuki</option>
+                <option value="Mahavir Motors">Mahavir Motors</option>
+                <option value="Nexa Motors">Nexa Motors</option>
+                <option value="Mycarzs Motors">Mycarzs Motors</option>
+                <option value="Tata Motors">Tata Motors</option>
+                </select>
+            </div>
+          </th>
+        </tr>
+        <br>
+        <tr align=center>
+          <th>
+            <div>
+              <select class="form-select" id="tsize" name="type_service" onchange="lop(this)"  aria-label="Default select example">
+              <option value="select">Type of service</option>
+              <option value="1">Full car service</option>
+              <option value="5">Major car service</option>
+              <option value="6">Interim service</option>
+              </select>
+            </div>
+          </th>
+        </tr>
+        <br>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text"  width="200">Extra services</span>
+            <input type="text" id="team members" class="form-control" name="extra" placeholder="Extra services" aria-label="participant name" aria-describedby="basic-addon1">
+            </div>
+          </th>
+        </tr>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text" >pickup/drop location</span>
+            <input type="text" placeholder="pickup/drop location" class="form-control" name="location" id="contact1" aria-describedby="basic-addon3">
+            </div>
+          </th>
+        </tr>
+        <tr align=center>
+          <th>
+            <div class="input-group mb-3">
+            <span class="input-group-text"  width="200">transaction id</span>
+            <input type="text" class="form-control" id="trans" name="trans" placeholder="transaction id" aria-label="participant name" aria-describedby="basic-addon1">
+            </div>
+          </th>
+        </tr>
+        <br>
+        <tr align=center>
+          <th>
+            <div class="col-12">
+            <button class="btn btn-success" value="submit" name="submit" type="submit">Book</button>
+            </div>
+          </th>
+        </tr>
+    </table>
+    </center>
+    </form>
+    </div>
+  </div>
+    
+</body>
+</html>
